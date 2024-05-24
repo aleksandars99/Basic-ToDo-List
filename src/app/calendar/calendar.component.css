@@ -1,0 +1,107 @@
+* {
+    font-family:cursive;
+    max-height: 1536px;
+}
+.body {
+    background-color: white;
+}
+.darkBody {
+    background-color: #121212;
+    color: #76ABAE;
+}
+.month {
+    font-size: large;
+    text-align: center;
+}
+.days {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    padding: 10px;
+    padding-bottom: 4px;
+}
+.day {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid gray;
+    padding: 5px;
+    font-size: 15px;
+    height: 14vh;
+    overflow: auto;
+}
+.night {
+    background-color: #135D66;
+    border: 1px solid #121212;
+    color: #121212;
+    padding: 5px;
+    font-size: 15px;
+    height: 14vh;
+    overflow: auto;
+}
+.text {
+    align-self: flex-start; /* Align text to the top */
+}
+.week {
+    background-color: #F6F5F2;
+    border: 1px solid #121212;
+    padding: 5px;
+    font-size:medium;
+    font-weight: bold;
+    height: 5vh;
+    text-align: center;
+}
+.darkWeek {
+    background-color: #135D66;
+    border: 1px solid #121212;
+    color: #121212;
+    padding: 5px;
+    font-size:medium;
+    font-weight: bold;
+    height: 5vh;
+    text-align: center;
+}
+div .task {
+   background-color: transparent;
+   width: 20vh;
+   height: 5vh;
+}
+.task {
+    border-radius: 20px;
+}
+.day .task {
+    background-color: #F6F5F2;
+}
+.night .task {
+    background-color: #1F1B24;
+    color: #76ABAE;
+}
+.pagination {
+    justify-content: center;
+}
+.paginationLight {
+    background-color: white;
+}
+.paginationDark {
+    justify-content: center;
+    background-color: #135D66;
+}
+.pageLight {
+    width: 8vh;
+    height: 6vh;
+    background-color: #F6F5F2;
+    border-radius: 5px;
+}
+.pageDark {
+    width: 8vh;
+    height: 6vh;
+    background-color: #135D66;
+    border-radius: 5px;
+}
+.footer button {
+    bottom: 0;
+    background-color: transparent;
+    width: 100%;
+}
+.darkFooter button {
+    bottom: 0;
+    background-color: #135D66;
+    width: 100%;
+}

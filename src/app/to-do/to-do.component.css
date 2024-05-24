@@ -1,0 +1,277 @@
+.bodyDiv {
+    background-color: white;
+}
+.baseDiv {
+    display: grid;
+    grid-template-columns: 20% 50% 25%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    justify-content: center;
+    max-height: 1536px;
+}
+@media (max-width: 1000px) {
+    .baseDiv {
+        font-size: 2vh;
+    }
+}
+@media (max-width: 775px) {
+    .baseDiv {
+        font-size: 1.5vh;
+    }
+}
+
+@media (max-width:600px) {
+    .baseDiv {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:400px) {
+    .baseDiv {
+        grid-template-columns: 1fr;
+    }
+    .dateDiv {
+        order: 0;
+    }
+    .menuDiv {
+        order: 1;
+    }
+    .taskDiv {
+        order: 2;
+    }
+}
+.menuDiv {
+    background-color: #F6F5F2;
+    box-shadow: 5px 10px gray;
+    text-align: center;
+    border-radius: 25px;
+}
+.dateDiv {
+    text-align: center;
+    border-radius: 25px;
+}
+.taskDiv {
+    background-color: #F6F5F2;
+    box-shadow: 5px 10px gray;
+    text-align: center;
+    border-radius: 25px;
+}
+.active {
+    outline: 2px solid rgb(184, 184, 184)!important;
+    border-radius: 10px;
+}
+.search {
+    border: 1px solid rgb(205, 203, 203);
+}
+.darkSearch {
+    border: 1px solid #76ABAE;
+}
+.darkSearch fa-icon {
+    color: #76ABAE;
+}
+.darkSearch ::placeholder {
+    color: #76ABAE;
+}
+.searchStyle {
+    width: 30px; 
+    padding-top: 0px;
+}
+.magnifyingGlass {
+    background-color: transparent;
+    border: 0; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+.menuDivC {
+    padding: 15px;
+}
+.darkMenuDivC {
+    padding: 15px;
+}
+.menuDivC button {
+    background-color: transparent;
+    margin-bottom: 3px;
+    border: 0;
+}
+.darkMenuDivC input {
+    color: #76ABAE !important;
+}
+.darkMenuDivC button {
+    background-color: transparent;
+    margin-bottom: 3px;
+    border: 0;
+    color: #76ABAE;
+}
+.menuDivC button:hover {
+    background-color: #F0EBE3;
+    border-radius: 10px;
+}
+.darkMenuDivC button:hover {
+    background-color: #121212;
+    border-radius: 10px;
+}
+.menuButton {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 100%;
+    text-align: left;
+}
+.listButton {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: left;
+    width: 100%;
+}
+.listSettings {
+    text-align: left;
+}
+.listQuit {
+    text-align: left;
+}
+.btnSettings {
+    border: 2px solid gray !important;
+    margin-right: 5px !important;
+    border-radius: 10px;
+}
+.numOfTasks {
+    margin-left: 20px;
+    border: 1px solid #F0EBE3;
+    padding: 5px;
+}
+.darkNumOfTasks {
+    margin-left: 20px;
+    border: 1px solid #135D66;
+    padding: 5px;
+}
+.dateDivC {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    text-align: left;
+    max-height: 600px;
+    height: 600px;
+    overflow:auto;
+}
+#h1Task {
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+.addNewTask {
+    color: gray;
+    align-items: center;
+    justify-content: center;
+    border: 1px gray;
+}
+.addNewTask button {
+    background-color: transparent;
+    width: 100%;
+    height: 20%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: gray;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 15px;
+}
+.darkAddNewTask button {
+    background-color: transparent;
+    width: 100%;
+    height: 20%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color:#76ABAE;
+    border: 1px solid #76ABAE;
+    border-radius: 15px;
+}
+.allTasks button {
+    background-color: transparent;
+    width: 100%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(227, 227, 227);
+    text-align: left;
+}
+.darkAllTasks button {
+    color: #135D66;
+}
+.allTasks fa-icon {
+    float: right;
+    padding-right: 25px;
+}
+.ulClass {
+    display: grid;
+    grid-template-columns: 95% 5%
+}
+.taskDivC {
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+}
+.taskDivCField {
+    background-color: transparent; 
+    border: 1px solid rgb(205, 203, 203);
+}
+.darkTaskDivCField {
+    background-color: transparent; 
+    border: 1px solid #135D66;
+}
+.input-container {
+    width: 100%;
+}
+.taskTitle {
+    width: 100%;
+}
+#taskTitle {
+    width: 100%;
+}
+#taskDescription {
+    width: 100%;
+}
+.listDiv {
+    align-items: start;
+    justify-content: left;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 25% 50% 20%;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+#deleteTask {
+    margin-right: 40px; 
+    border-radius: 10px; 
+    width: 40%;
+    padding-left: 10px; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+#saveTask {
+    border-radius: 10px; 
+    width: 40%;
+    padding-left: 10px; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+.darkMode1 {
+    background-color: #1F1B24 ;
+    color: #76ABAE;
+}
+.darkMode1 ::placeholder {
+    color: #76ABAE;
+    box-shadow: 10px 0 5px -2px #76ABAE;
+}
+.darkMode2 {
+    background-color: #121212;
+    color: #76ABAE
+}
+.dark {
+    background-color: #121212;
+    color: #76ABAE;
+}
+.dark .menuDiv {
+    z-index: 0;
+    box-shadow: 5px 10px #76ABAE;
+}

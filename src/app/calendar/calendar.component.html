@@ -1,0 +1,246 @@
+<!-- calendar.component.html -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<div class="body">
+    <div class="mnt">
+        <div class="month">
+            <h1>{{currentMonth}}</h1>
+        </div>
+        <nav aria-label="Page nav">
+            <ul class="pagination">
+              <button class="page-item pageLight"(click)="switchToJan()" id="janButton">Jan</button>
+              <button class="page-item pageLight"(click)="switchToFeb()">Feb</button>
+              <button class="page-item pageLight"(click)="switchToMar()">Mar</button>
+              <button class="page-item pageLight"(click)="switchToApr()">Apr</button>
+              <button class="page-item pageLight"(click)="switchToMay()">May</button>
+              <button class="page-item pageLight"(click)="switchToJun()">Jun</button>
+              <button class="page-item pageLight"(click)="switchToJul()">Jul</button>
+              <button class="page-item pageLight"(click)="switchToAug()">Aug</button>
+              <button class="page-item pageLight"(click)="switchToSep()">Sep</button>
+              <button class="page-item pageLight"(click)="switchToOct()">Oct</button>
+              <button class="page-item pageLight"(click)="switchToNov()">Nov</button>
+              <button class="page-item pageLight"(click)="switchToDec()">Dec</button>
+            </ul>
+        </nav>
+        <div class="january" *ngIf="january">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                
+                <div *ngFor="let day of daysInJanuary" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--February-->
+        <div class="february" *ngIf="february">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                
+                <div *ngFor="let day of daysInFebruary"  [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="march" *ngIf="march">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                
+                <div *ngFor="let day of daysInMarch"  [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="april" *ngIf="april">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                
+                <div *ngFor="let day of daysInApril" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="may" *ngIf="may">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                
+                <div *ngFor="let day of daysInMay" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="june" *ngIf="june">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                
+                <div *ngFor="let day of daysInJune" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="july" *ngIf="july">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                
+                <div *ngFor="let day of daysInJuly" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="august" *ngIf="august">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+
+                <div *ngFor="let day of daysInAugust" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="september" *ngIf="september">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                
+                <div *ngFor="let day of daysInSeptember" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="october" *ngIf="october">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>                
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                
+                <div *ngFor="let day of daysInOctober" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="november" *ngIf="november">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+
+                <div *ngFor="let day of daysInNovember" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)">{{ task.title }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="december" *ngIf="december">
+            <div class="days">
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Sunday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Monday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Tuesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Wednesday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Thursday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Friday</div>
+                <div [ngClass]="{'week' : !isDarkMode, 'darkWeek': isDarkMode}">Saturday</div>
+                
+                <div *ngFor="let day of daysInDecember" [ngClass]="{'day': !isDarkMode, 'night': isDarkMode}">
+                    <span class="day-number">{{ day.date.split('-')[2] }}.{{ day.date.split('-')[1] }}</span>
+                    <div *ngFor="let task of getTasksForDate(day.date)">
+                      <button class="task" (click)="editTask(task.taskId)"><span [ngClass]="task.listPlace">{{ task.title }}</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="footer">
+            <button type="button" (click)="return()">Back</button>
+        </div>
+    </div>
+</div>

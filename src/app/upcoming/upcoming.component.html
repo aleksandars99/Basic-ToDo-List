@@ -1,0 +1,61 @@
+<div class="bodyDiv">
+    <div class="baseDiv">
+        <div class="menuDiv">
+            <div class="menuDivC" style="text-align: left;">
+                <h3><b>Menu</b></h3><br>
+            
+                <div class="input-group flex-nowrap search">
+                    <div class="input-group-prepend searchStyle">
+                      <span class="input-group-text searchIcon magnifyingGlass" id="addon-wrapping"><fa-icon [icon]="faMagnifyingGlass"></fa-icon> </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search" style="background-color: transparent; border: 0;" [disabled]="isDisabled"><br>
+                </div><br>
+            
+                <h6>Tasks</h6>
+                <button class="menuButton active" id="upcomingButton"><span><fa-icon [icon]="faAnglesRight"></fa-icon></span> {{upcoming}}</button><br> 
+                <button class="menuButton " id="todayButton" (click)="openToday()"><span><fa-icon [icon]="faCalendarWeek"></fa-icon></span> {{today}}  <span class="numOfTasks"></span></button><br>
+                <button class="menuButton" id="calendarButton" (click)="openCalendar()"><span><fa-icon [icon]="faNoteSticky"></fa-icon></span> {{calendar}}</button><br>
+            
+            
+                <br><h6>Lists</h6>
+                <button class="listButton showAll" [disabled]="isDisabled"><span><fa-icon [icon]="faSquare" style="color:green"></fa-icon></span> Show All</button><br> 
+                <button class="listButton showPersonal" [disabled]="isDisabled"><span><fa-icon [icon]="faSquare" style="color:red"></fa-icon></span> Personal <span class="numOfTasks"> </span></button><br> 
+                <button class="listButton showWork" [disabled]="isDisabled"><span><fa-icon [icon]="faSquare" style="color: blue;"></fa-icon></span> Work <span class="numOfTasks"></span></button><br>
+                <button class="listButton showList1" [disabled]="isDisabled"><span><fa-icon [icon]="faSquare" style="color: yellow;"></fa-icon></span> List 1  <span class="numOfTasks"></span></button><br>
+                
+                <br><br><br><br><br><br>
+    
+                <div class="settingsAndQuit">
+                    <button type="button" data-trigger="focus" class="listSettings" popoverTitle="Settings" [ngbPopover]="Settings" [autoClose]="'outside'" [disabled]="isDisabled"><span><fa-icon [icon]="faSliders"></fa-icon></span> Settings</button><br>
+                    <button class="listQuit" (click)="quit()" ><span><fa-icon [icon]="faRightFromBracket"></fa-icon></span> Quit</button><br>
+    
+                    <div class="color-mode">
+                        <ng-template #Settings>
+                            <p>This is the content of the popover.</p>
+                            <button type="button" class="btn btnSettings" id="btnLight" [disabled]="isDisabled">Light Mode</button>
+                            <button type="button" class="btn btnSettings" id="btnDark" [disabled]="isDisabled">Dark Mode</button>
+                        </ng-template>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <div class="upcomingClass">
+            <div class="upcomingDiv">
+                <h1><b>{{upcoming}}</b></h1>
+            </div>
+            <h6>Here you can see the list of tasks that end in the next seven days.</h6>
+
+            <br><br><br><br><br>
+
+            <div *ngIf="getTasksForNext7Days.length === 0">
+                <p>No tasks in the next 7 days.</p>
+            </div>
+            <div *ngIf="getTasksForNext7Days.length > 0">
+                <ul *ngFor="let task of getTasksForNext7Days">
+                    <button class="task" [ngClass]="{'lightText' : !isDarkMode, 'darkText': isDarkMode}" (click)="editTask(task.taskId)">{{ task.title }} --- <span class="taskText" >Description: {{task.description}}</span> --- Due: {{ task.dueDate | date:'MM-dd-yyyy' }} </button>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

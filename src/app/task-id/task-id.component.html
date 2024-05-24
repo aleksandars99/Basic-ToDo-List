@@ -1,0 +1,95 @@
+<div class="bodyDiv">
+    <div class="baseDiv">
+        <div class="menuDiv">
+            <div class="menuDivC" style="text-align: left;">
+                <h3><b>Menu</b></h3><br>
+            
+                <div class="input-group flex-nowrap search" >
+                    <div class="input-group-prepend searchStyle">
+                        <span class="input-group-text searchIcon magnifyingGlass" id="addon-wrapping"><fa-icon [icon]="faMagnifyingGlass"></fa-icon> </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search" style="background-color: transparent; border: 0;" [disabled]="isDisabled"><br>
+                </div><br>
+            
+                <h6>Tasks</h6>
+                <button class="menuButton" id="upcomingButton" (click)="selectTask(upcoming)" [disabled]="isDisabled"><span><fa-icon [icon]="faAnglesRight"></fa-icon></span> {{upcoming}}</button><br> 
+                <button class="menuButton active" id="todayButton" (click)="selectTask(today)" disabled><span><fa-icon [icon]="faCalendarWeek"></fa-icon></span> {{today}}  <span class="numOfTasks">{{counter}}</span></button><br>
+                <button class="menuButton" id="calendarButton" (click)="selectTask(calendar)" disabled><span><fa-icon [icon]="faNoteSticky"></fa-icon></span> {{calendar}}</button><br>
+            
+            
+                <br><h6>Lists</h6>
+                <button class="listButton" [disabled]="isDisabled" ><span><fa-icon [icon]="faSquare" style="color:green" ></fa-icon></span> Show All</button><br> 
+                <button class="listButton" disabled><span><fa-icon [icon]="faSquare" style="color:red"></fa-icon></span> Personal</button><br> 
+                <button class="listButton" disabled><span><fa-icon [icon]="faSquare" style="color: blue;"></fa-icon></span> Work</button><br>
+                <button class="listButton" disabled><span><fa-icon [icon]="faSquare" style="color: yellow;"></fa-icon></span> List 1</button><br>
+                
+                <br><br><br><br><br><br>
+            
+                <div class="settingsAndQuit">
+                    <button type="button" disabled data-trigger="focus" class="listSettings" popoverTitle="Settings" [ngbPopover]="Settings" [autoClose]="'outside'"><span><fa-icon [icon]="faSliders"></fa-icon></span> Settings</button><br>
+                    <button class="listQuit" (click)="quit()"><span><fa-icon [icon]="faRightFromBracket"></fa-icon></span> Quit</button><br>
+    
+                    <div class="color-mode">
+                        <ng-template #Settings>
+                            <p>This is the content of the popover.</p>
+                            <button type="button" class="btn btnSettings">Light Mode</button>
+                            <button type="button" class="btn btnSettings">Dark Mode</button>
+                        </ng-template>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <div class="dateDiv">
+            <div class="dateDivC">
+                <h1 id="h1Task"><b>{{dta}} </b> <span class="numOfTasks">{{counter}}</span></h1>
+                <div class="addNewTask">
+                    <button><span><fa-icon [icon]="faPlus"></fa-icon></span> New Task</button>
+                </div><br>
+                <div class="allTasks">
+                    <ul *ngFor="let task of tasks" class="ulClass">
+                        <button >{{task.title}}<fa-icon [icon]="faChevronRight"></fa-icon></button>
+                        <button ><fa-icon style="color: red;" [icon]="faX"></fa-icon></button>
+                        <span> {{task.listPlace}} <span style="padding-left: 5px;"> {{task.dueDate | date:'MM-dd-yyyy'}}</span></span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="taskDiv">
+            <div class="taskDivC">
+                <h3 style="text-align: left;"><b>Task: </b></h3><br>
+            
+                <input type="title" name="123" id="taskTitle" placeholder="titleName" class="taskDivCField" [(ngModel)]="task.title"><br>
+            
+            
+                <br><textarea name="description" id="23" cols="30" rows="5" placeholder="descriptionName" class="taskDivCField" style="resize: none; width: 100%;" [(ngModel)]="task.description"></textarea>
+            
+                <form action="">
+                    <div class="listDiv">
+                        <label for="list">List: </label>
+                        <select name="list" id="cars" name="list" class="taskDivCField" [(ngModel)]="task.listPlace"> 
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="List1">List 1</option>
+                        </select><br>
+            
+                        <label for="date">Due date: </label>
+                        <input type="date" [(ngModel)]="task.dueDate" width="50px" name="date" class="taskDivCField" style="margin-top: 10px;"> <br>    
+                    </div>
+                </form>
+            
+                <div class="buttons">
+                    <br><br><br><br><br><br><br><br><br><br>
+                    <button (click)="back()" id="backTask">Back</button>
+                    <button (click)="saveTask()" id="saveTask">Save Changes</button>
+                </div>
+            
+                
+            
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</div>

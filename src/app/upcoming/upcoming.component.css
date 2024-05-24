@@ -1,0 +1,170 @@
+.bodyDiv {
+    background-color: white;
+}
+.baseDiv {
+    display: grid;
+    grid-template-columns: 20% 75%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    justify-content: center;
+    max-height: 1536px;
+}
+.menuDiv {
+    background-color: #F6F5F2;
+    box-shadow: 5px 10px gray;
+    text-align: center;
+    border-radius: 25px;
+}
+.active {
+    outline: 2px solid rgb(184, 184, 184)!important;
+    border-radius: 10px;
+}
+.search {
+    border: 1px solid rgb(205, 203, 203);
+}
+.darkSearch {
+    border: 1px solid #76ABAE;
+}
+.darkSearch fa-icon {
+    color: #76ABAE;
+}
+.darkSearch ::placeholder {
+    color: #76ABAE;
+}
+.searchStyle {
+    width: 30px; 
+    padding-top: 0px;
+}
+.magnifyingGlass {
+    background-color: transparent;
+    border: 0; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+.menuDivC {
+    padding: 15px;
+}
+.darkMenuDivC {
+    padding: 15px;
+}
+.menuDivC button {
+    background-color: transparent;
+    margin-bottom: 3px;
+    border: 0;
+}
+.darkMenuDivC input {
+    color: #76ABAE !important;
+}
+.darkMenuDivC button {
+    background-color: transparent;
+    margin-bottom: 3px;
+    border: 0;
+    color: #76ABAE;
+}
+.menuDivC button:hover {
+    background-color: #F0EBE3;
+    border-radius: 10px;
+}
+.darkMenuDivC button:hover {
+    background-color: #121212;
+    border-radius: 10px;
+}
+.menuButton {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 100%;
+    text-align: left;
+}
+.listButton {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: left;
+    width: 100%;
+}
+:disabled {
+    cursor:not-allowed;
+}
+.upcomingClass {
+    padding-left: 15vh;
+}
+.upcomingDiv {
+    background-color: #F6F5F2; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #F6F5F2 , white);
+    height: 20%;
+    width: 80%;
+    position: relative;
+}
+.upcomingDivDark {
+    background-color: #1F1B24; /* For browsers that do not support gradients */ 
+    background-image: linear-gradient(to right, #121212 , #1F1B24); 
+    height: 20%;
+    width: 80%;
+    position: relative;
+}
+.upcomingDiv h1 {
+    position: absolute;
+    bottom: 0;
+}
+.upcomingDivDark h1 {
+    position: absolute;
+    bottom: 0;
+}
+.upcomingClass h6 {
+    position: absolute;
+    right:50vh;
+}
+.btnSettings {
+    border: 2px solid gray !important;
+    margin-right: 5px !important;
+    border-radius: 10px;
+}
+.task {
+    background-color: transparent;
+    border-radius: 10px;
+}
+.taskDark {
+    background-color: transparent;
+    border-radius: 10px;
+    color: #76ABAE;
+}
+:disabled {
+    cursor:not-allowed;
+}
+button:disabled {
+    color: gray !important;
+}
+button:disabled fa-icon {
+    color: gray !important;
+}
+li {
+    list-style-type:none;
+}
+.darkMode1 {
+    background-color: #1F1B24 ;
+    color: #76ABAE;
+}
+.darkMode1 ::placeholder {
+    color: #76ABAE;
+    box-shadow: 10px 0 5px -2px #76ABAE;
+}
+.dark {
+    background-color: #121212;
+    color: #76ABAE;
+}
+.dark .menuDiv {
+    z-index: 0;
+    box-shadow: 5px 10px #76ABAE;
+}
+.taskText {
+    color: gray;
+}
+.taskTextDark {
+    color: #76ABAE;
+}
+
+.lightText {
+    color: black;
+}
+.darkText {
+    color: #76ABAE;
+}
