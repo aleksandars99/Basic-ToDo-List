@@ -138,40 +138,40 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewInit {
     this.storedMonth = JSON.parse(localStorage.getItem('month'))
 
     if (this.month === 0) {
-      this.switchToMay();
+      this.switchToJan();
     }
     else if (this.month === 1) {
-      this.switchToMay();
+      this.switchToFeb();
     }
     else if (this.month === 2) {
-      this.switchToMay();
+      this.switchToMar();
     }
     else if (this.month === 3) {
-      this.switchToMay();
+      this.switchToApr();
     }
     else if (this.month === 4) {
       this.switchToMay();
     }
     else if (this.month === 5) {
-      this.switchToMay();
+      this.switchToJun();
     }
     else if (this.month === 6) {
-      this.switchToMay();
+      this.switchToJul();
     }
     else if (this.month === 7) {
-      this.switchToMay();
+      this.switchToAug();
     }
     else if (this.month === 8) {
-      this.switchToMay();
+      this.switchToSep();
     }
     else if (this.month === 9) {
-      this.switchToMay();
+      this.switchToOct();
     }
     else if (this.month === 10) {
-      this.switchToMay();
+      this.switchToNov();
     }
     else if (this.month === 11) {
-      this.switchToMay();
+      this.switchToDec();
     }
   }
 

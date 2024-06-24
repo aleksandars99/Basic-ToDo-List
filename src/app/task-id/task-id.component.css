@@ -9,9 +9,19 @@
     justify-content: center;
     max-height: 1536px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1120px) {
     .baseDiv {
-        font-size: 2vh;
+        grid-template-columns: 75% 25%;
+        height: 100%;
+    }
+    .taskDiv {
+        height: 100%;
+    }
+    .dateDiv {
+        height: 100%;
+    }
+    .menuDiv{
+        display: none;
     }
 }
 @media (max-width: 775px) {
@@ -41,7 +51,7 @@
 }
 .menuDiv {
     background-color: #F6F5F2;
-    box-shadow: 5px 10px gray;
+    box-shadow: 0 .25rem .75rem rgba(10, 10, 10, .5);
     text-align: center;
     border-radius: 25px;
 }
@@ -51,7 +61,7 @@
 }
 .taskDiv {
     background-color: #F6F5F2;
-    box-shadow: 5px 10px gray;
+    box-shadow: 0 .25rem .75rem rgba(10, 10, 10, .5);
     text-align: center;
     border-radius: 25px;
 }
@@ -279,5 +289,4 @@ button:disabled fa-icon {
 }
 .dark .menuDiv {
     z-index: 0;
-    box-shadow: 5px 10px #76ABAE;
 }
